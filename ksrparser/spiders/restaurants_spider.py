@@ -41,7 +41,5 @@ class RestaurantSpider(scrapy.Spider):
             'street_address': response.css('table tr')[1].css('td::text')[2].extract().strip(),
             'postal_code': response.css('table tr')[2].css('td::text')[2].extract().strip(),
             'post_office': response.css('table tr')[3].css('td::text')[2].extract().strip(),
-            'restaurants_web': response.css('table tr')[4].css('td::text')[2].extract().strip(),
-            'restaurants_operator': response.css('table tr')[5].css('td::text')[2].extract().strip(),
-            'operators_web': response.css('table tr')[6].css('td::text')[2].extract().strip(),
+            'restaurants_operator': response.css('table tr')[5].css('td::text')[2].extract().strip()
         }
