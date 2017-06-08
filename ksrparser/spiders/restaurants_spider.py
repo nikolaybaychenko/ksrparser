@@ -35,11 +35,11 @@ class RestaurantSpider(scrapy.Spider):
 
     def parse_restaurant(self, response):
         yield {
-            'restaurant': response.css('table tr td b::text').extract_first().strip(),
-            'region': response.meta['region_name'],
-            'city': response.meta['city_name'],
-            'street_address': response.css('table tr')[1].css('td::text')[2].extract().strip(),
-            'postal_code': response.css('table tr')[2].css('td::text')[2].extract().strip(),
-            'post_office': response.css('table tr')[3].css('td::text')[2].extract().strip(),
-            'restaurants_operator': response.css('table tr')[5].css('td::text')[2].extract().strip()
+            'Restaurant': response.css('table tr td b::text').extract_first().strip(),
+            'Region': response.meta['region_name'],
+            'City': response.meta['city_name'],
+            'Street address': response.css('table tr')[1].css('td::text')[2].extract().strip(),
+            'Postal code': response.css('table tr')[2].css('td::text')[2].extract().strip(),
+            'Post office': response.css('table tr')[3].css('td::text')[2].extract().strip(),
+            'Restaurants operator': response.css('table tr')[5].css('td::text')[2].extract().strip()
         }
